@@ -1,0 +1,19 @@
+server:
+  port: 4202
+  servlet:
+    context-path: /feign
+
+eureka:
+  instance:
+      leaseRenewalIntervalInSeconds: 10 #表示eureka client发送心跳给server端的频率，默认为30秒
+      health-check-url-path: /${server.servlet.context-path}/actuator/health #健康检查的地址（依赖spring-boot-starter-actuator）
+      prefer-ip-address: true #以IP地址注册到服务中心
+      instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:4101/eureka/
+
+spring:
+  application:
+    name: header-feign

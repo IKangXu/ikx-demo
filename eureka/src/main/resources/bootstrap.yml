@@ -1,0 +1,24 @@
+server:
+  port: 4101
+  servlet:
+    context-path: /
+
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      # 相互注册，组成一个集群，实现高可用
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    eviction-interval-timer-in-ms: 4000
+    enable-self-preservation: false
+    renewal-percent-threshold: 0.9
+
+spring:
+  application:
+    name: eureka
