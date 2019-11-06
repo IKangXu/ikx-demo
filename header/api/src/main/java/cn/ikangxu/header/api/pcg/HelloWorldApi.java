@@ -18,7 +18,10 @@ import org.springframework.web.bind.annotation.*;
 public class HelloWorldApi {
 
     @GetMapping("sayHello")
-    public String sayHello(@RequestHeader(value = "testHeader", required = false) String testHeader, @RequestParam("testParam") String testParam) {
+    public String sayHello(
+            @RequestHeader(value = "testHeader", required = false) String testHeader,
+            @RequestParam("testParam") String testParam
+    ) {
         return new StringBuilder("testHeader=").append(testHeader)
                 .append(";testParam=").append(testParam)
                 .toString();
