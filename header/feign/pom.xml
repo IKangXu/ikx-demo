@@ -29,6 +29,11 @@
         </dependency>
         <dependency>
             <groupId>cn.ikangxu</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.ikangxu</groupId>
             <artifactId>spring-boot-starter-header</artifactId>
             <version>1.0.0</version>
         </dependency>

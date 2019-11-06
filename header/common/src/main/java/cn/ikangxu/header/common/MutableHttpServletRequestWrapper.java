@@ -2,7 +2,7 @@
  *  Engine3D Technologies Co., Ltd. Copyright 2019,  All rights reserved
  */
 
-package cn.ikangxu.header.feign.common;
+package cn.ikangxu.header.common;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;

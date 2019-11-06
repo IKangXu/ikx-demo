@@ -2,10 +2,9 @@
  *  Engine3D Technologies Co., Ltd. Copyright 2019,  All rights reserved
  */
 
-package cn.ikangxu.header.feign.common;
+package cn.ikangxu.header.common;
 
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -20,7 +19,6 @@ import java.io.IOException;
  * @description
  * @date 2019/11/5 14:38
  */
-@Component
 @WebFilter(filterName = "setHeader",urlPatterns = "/*")
 public class SetHeader implements Filter {
     @Override

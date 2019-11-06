@@ -53,3 +53,32 @@
 
 ![访问结果](./feign/doc/img/img_02.png)
 
+> Ribbon测试
+
+配置信息，让RestTemplate支持负载均衡
+
+```java
+    @Bean
+    @LoadBalanced
+    RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+```
+
+输出代码
+
+```java
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping("sayHello")
+    public String sayHello() {
+        return restTemplate.getForEntity("http://header-api/api/sayHello?testParam=111", String.class).getBody();
+    }
+```
+
+启动`rest`，默认端口`4203` 
+
+打开浏览器，访问 `http://localhost:4203/feign/sayHello`，得到以下结果
+
+![访问结果](./rest/doc/img/img_01.png)

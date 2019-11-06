@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.ikangxu.header.feign.common.SetHeader
+cn.ikangxu.header.common.SetHeader
